@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shiba Router example</title>
+</head>
+<body>
+    <shiba-browserRouter>
+        <shiba-route data-path="/app/" data-src="./app/tabs/home.html"/>
+        <shiba-route data-path="/app/about" data-src="./app/tabs/about.html"/>
+        <shiba-route data-path="/app/code" data-src="./app/tabs/code.html"/>
+        <shiba-route data-path="/app/with-asterisk/*" data-src="./app/tabs/asterisk.html"/>
+
+        <shiba-route data-path="/app/*" data-src="app/tabs/404.html"/>
+    </shiba-browserRouter>
+    <ul>
+        <li>
+            <a onClick='modifyPath("/app/about")'>About</a>
+        </li>
+        <li>
+            <a onClick='modifyPath("/app/code")'>Code</a>
+        </li>
+        <li>
+            <a onClick='modifyPath("/app/with-asterisk/any-string-here")'>Route with Asterisk</a>
+        </li>
+        
+    </ul>
+    <script>
+        const rootPath = "/";
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="/app/shiba-router.js"></script>
+</body>
+</html>
